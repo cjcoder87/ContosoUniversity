@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ContosoUniversity.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Inheritance : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,6 +48,7 @@ namespace ContosoUniversity.Migrations
                     Budget = table.Column<decimal>(type: "money", nullable: false),
                     InstructorID = table.Column<int>(nullable: true),
                     Name = table.Column<string>(maxLength: 50, nullable: true),
+                    RowVersion = table.Column<byte[]>(rowVersion: true, nullable: true),
                     StartDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
